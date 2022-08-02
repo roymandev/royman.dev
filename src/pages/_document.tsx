@@ -15,7 +15,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body>
+      <body className="text-stone-700">
         <Main />
         <NextScript />
       </body>
