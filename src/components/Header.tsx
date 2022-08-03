@@ -5,7 +5,6 @@ const Header = () => (
     <hr className="absolute inset-x-0 border-stone-300" />
     <nav className="z-10 flex flex-1 gap-2">
       <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/">Portfolio</HeaderLink>
     </nav>
 
     <HeaderLink href="/" className="text-3xl font-medium">
