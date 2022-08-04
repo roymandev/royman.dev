@@ -1,4 +1,5 @@
 import AppList from '@/components/AppList';
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { myApps } from '@/data/myApps';
 import type { NextPage } from 'next';
@@ -33,6 +34,8 @@ const Home: NextPage = () => {
           <AppList appList={myApps} />
         </section>
       </main>
+
+      <Footer />
     </>
   );
 };
