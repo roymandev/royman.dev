@@ -4,7 +4,8 @@ export type TechList =
   | 'firebase'
   | 'tailwindcss'
   | 'vite'
-  | 'jotai';
+  | 'jotai'
+  | 'nextjs';
 
 export interface AppData {
   title: string;
