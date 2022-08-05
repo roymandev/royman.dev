@@ -14,6 +14,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
           rel="stylesheet"
         />
+        <meta name="description" content="Personal Website." />
       </Head>
       <body className="text-stone-700">
         <Main />
