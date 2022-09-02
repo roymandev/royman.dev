@@ -17,9 +17,9 @@ const Home: NextPage = () => {
       <main className="mx-auto flex max-w-6xl flex-col gap-10">
         <section className="relative grid h-[80vh] place-content-center text-center text-xl leading-relaxed md:text-2xl">
           <div className="absolute inset-0 flex items-center justify-center gap-14">
-            <span className="h-[40vh] w-px animate-squat bg-stone-300"></span>
-            <span className="h-[60vh] w-px animate-squat bg-stone-300"></span>
-            <span className="h-[40vh] w-px animate-squat bg-stone-300"></span>
+            <span className="h-[40vh] w-px bg-stone-300"></span>
+            <span className="h-[60vh] w-px bg-stone-300"></span>
+            <span className="h-[40vh] w-px bg-stone-300"></span>
           </div>
           <div className="z-10 bg-white py-6 px-4 leading-snug md:py-8 md:leading-normal">
             <p className="mb-4 text-3xl font-bold">Hi I&apos;m Royman</p>

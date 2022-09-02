@@ -10,19 +10,6 @@ module.exports = {
       fontFamily: {
         sans: ['DM Sans', ...defaultTheme.fontFamily.sans],
       },
-      animation: {
-        squat: 'squat 1.5s ease-in-out infinite',
-      },
-      keyframes: {
-        squat: {
-          '0%, 100%': {
-            transform: 'scaleY(1)',
-          },
-          '50%': {
-            transform: 'scaleY(1.2)',
-          },
-        },
-      },
     },
   },
   plugins: [],
