@@ -10,7 +10,7 @@ export const myApps: AppData[] = [
   {
     title: 'Worship App',
     description: '(WIP) Lyrics presentation web based app for Church',
-    url: 'https://worship-app.vercel.app/',
-    techs: ['nextjs', 'typescript', 'tailwindcss'],
+    url: 'https://worship-app.royman.dev/',
+    techs: ['react', 'typescript', 'firebase', 'tailwindcss'],
   },
 ];
