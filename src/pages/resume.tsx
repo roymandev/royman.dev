@@ -20,7 +20,7 @@ const Resume: NextPage = () => {
       </Head>
 
       <div className="mx-auto flex max-w-lg flex-col gap-16 px-10 py-16 print:max-w-full print:p-0 sm:max-w-4xl sm:py-20 print:sm:p-0">
-        <div className="fixed inset-x-0 top-0 text-center print:hidden">
+        <div className="fixed inset-x-0 top-0 bg-stone-200 py-1 text-center print:hidden">
           You can{' '}
           <button className="font-bold underline" onClick={printHandler}>
             print

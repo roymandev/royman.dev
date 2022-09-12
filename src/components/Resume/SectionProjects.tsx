@@ -9,7 +9,7 @@ const SectionProjects = () => (
           <h3 className="font-medium">
             <a
               href={app.url}
-              className="border-b border-dashed border-slate-500 transition-all hover:border-solid hover:border-slate-500 print:border-slate-500"
+              className="border-b border-dashed border-stone-500 transition-all hover:border-solid hover:border-stone-500 print:border-stone-500"
             >
               {app.title} - {app.description}
             </a>
