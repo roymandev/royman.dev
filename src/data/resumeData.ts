@@ -3,7 +3,7 @@ export const royman = {
     phone: '+6282267175875',
     email: 'royman.dev@gmail.com',
     website: 'royman.dev',
-    github: 'github.com/royman.dev',
+    github: 'github.com/roymandev',
   },
   summary:
     "I'm a person who loves to learn and create things.\nThat why currently now i learn programming and make great apps.",
@@ -16,7 +16,7 @@ export const royman = {
       position: 'Printing Supervisor',
       company: 'PT Reycom Document Solusi',
       city: 'Medan',
-      start_date: '2021',
+      start_date: 'Aug 2021',
       end_date: 'Present',
     },
   ],
