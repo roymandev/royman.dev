@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header
       className={twclsx(
-        'fixed top-0 z-20 mx-auto flex max-w-6xl gap-3 px-8 uppercase tracking-widest bg-white [&+*]:mt-20',
+        'fixed top-0 z-20 mx-auto flex max-w-4xl gap-3 px-8 uppercase tracking-widest bg-white [&+*]:mt-20',
         openNav ? 'inset-0 flex-col' : 'inset-x-0 h-20 items-center',
       )}
     >
