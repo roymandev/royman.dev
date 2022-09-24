@@ -35,7 +35,7 @@ const getIcon = (tech: TechList) => {
 
 const AppListItem = ({ app }: AppListItemProps) => (
   <BaseLink
-    href={app.url}
+    href={app.liveUrl || app.repo}
     className="block flex-1 shrink-0 border border-dashed border-stone-300 py-4 px-6 text-center transition-all hover:border-solid hover:border-stone-400 hover:shadow-lg md:max-w-[50%]"
   >
     <h3 className="mb-2 text-xl font-bold">{app.title}</h3>

@@ -10,6 +10,9 @@ export type TechList =
 export interface AppData {
   title: string;
   description: string;
-  url: string;
   techs: TechList[];
+  iconUrl?: string;
+  imageUrl?: string;
+  liveUrl?: string;
+  repo: string;
 }

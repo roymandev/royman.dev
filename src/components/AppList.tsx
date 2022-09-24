@@ -8,7 +8,7 @@ export interface AppListProps {
 const AppList = ({ appList }: AppListProps) => (
   <div className="flex flex-col justify-center gap-4 px-4 sm:flex-row">
     {appList.map((app) => (
-      <AppListItem key={app.url} app={app} />
+      <AppListItem key={app.liveUrl} app={app} />
     ))}
   </div>
 );
