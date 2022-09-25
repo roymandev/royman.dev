@@ -1,5 +1,4 @@
 import { NextPage } from 'next';
-import Head from 'next/head';
 import BaseLink from '@/components/BaseLink';
 import SectionContacts from '@/components/Resume/SectionContacts';
 import SectionSummary from '@/components/Resume/SectionSummary';
@@ -7,6 +6,14 @@ import SectionSkills from '@/components/Resume/SectionSkills';
 import SectionProjects from '@/components/Resume/SectionProjects';
 import SectionExperiences from '@/components/Resume/SectionExperiences';
 import SectionEducations from '@/components/Resume/SectionEducations';
+import CustomSeo from '@/components/utils/CustomSeo';
+import { getBasePageMeta } from '@/lib/getPageMeta';
+
+const PAGE_META = getBasePageMeta({
+  title: 'Resume',
+  description: 'Personal website',
+  slug: '/resume',
+});
 
 const Resume: NextPage = () => {
   const printHandler = () => {
@@ -15,9 +22,7 @@ const Resume: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Royman - Resume</title>
-      </Head>
+      <CustomSeo {...PAGE_META} />
 
       <div className="mx-auto flex max-w-lg flex-col gap-16 px-10 py-16 print:max-w-full print:p-0 sm:max-w-4xl sm:py-20 print:sm:p-0">
         <div className="fixed inset-x-0 top-0 bg-stone-200 py-1 text-center print:hidden">
