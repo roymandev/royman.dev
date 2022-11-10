@@ -13,9 +13,9 @@ const Header = () => {
         openNav ? 'inset-0 flex-col' : 'inset-x-0 h-20 items-center',
       )}
     >
-      <div className="z-10 flex h-20 w-full items-center">
-        <hr className="absolute inset-x-0 border-stone-300" />
+      <hr className="fixed inset-x-0 top-0 mt-10 border-stone-300" />
 
+      <div className="z-10 flex h-20 w-full items-center">
         <HeaderButton href="/" className="text-center text-3xl font-medium">
           Royman
         </HeaderButton>
