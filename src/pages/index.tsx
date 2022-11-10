@@ -36,7 +36,7 @@ const Home: NextPage = () => {
         <section className="text-center">
           <h2 className="mb-4 text-2xl font-bold">Applications</h2>
           <p className="mb-10">Apps that i made, more app coming soon.</p>
-          <AppList appList={myApps} />
+          <AppList apps={myApps} />
         </section>
       </main>
 

@@ -2,12 +2,12 @@ import AppListItem from '@/components/AppListItem';
 import { AppData } from '@/types';
 
 export interface AppListProps {
-  appList: AppData[];
+  apps: AppData[];
 }
 
-const AppList = ({ appList }: AppListProps) => (
+const AppList = ({ apps }: AppListProps) => (
   <div className="flex flex-col justify-center gap-4 px-4 sm:flex-row">
-    {appList.map((app) => (
+    {apps.map((app) => (
       <AppListItem key={app.liveUrl} app={app} />
     ))}
   </div>
