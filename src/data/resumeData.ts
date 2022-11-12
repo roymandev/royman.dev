@@ -37,4 +37,26 @@ export const royman = {
       tech: ['React', 'Firebase', 'TypeScript', 'Tailwind CSS', 'Jotai'],
     },
   ],
+  certificates: [
+    {
+      title: 'Devcode Challenge: Front-end React.js case Todo-list',
+      url: 'https://devcode.gethired.id/job/share/JXW739',
+    },
+    {
+      title: 'Dicoding: Belajar Membuat Aplikasi Web dengan React',
+      url: 'https://www.dicoding.com/certificates/72ZDOK19QXYW',
+    },
+    {
+      title: 'Dicoding: Belajar Membuat Front-End Web untuk Pemula',
+      url: 'https://www.dicoding.com/certificates/L4PQ42N67XO1',
+    },
+    {
+      title: 'Dicoding: Belajar Dasar Pemrograman JavaScript',
+      url: 'https://www.dicoding.com/certificates/07Z6R04QWPQR',
+    },
+    {
+      title: 'Dicoding: Belajar Dasar Pemrograman Web',
+      url: 'https://www.dicoding.com/certificates/4EXG5KM11XRL',
+    },
+  ],
 };
