@@ -8,6 +8,7 @@ import SectionExperiences from '@/components/Resume/SectionExperiences';
 import SectionEducations from '@/components/Resume/SectionEducations';
 import CustomSeo from '@/components/utils/CustomSeo';
 import { getBasePageMeta } from '@/lib/getPageMeta';
+import SectionCertificates from '@/components/Resume/SectionCertificates';
 
 const PAGE_META = getBasePageMeta({
   title: 'Resume',
@@ -53,8 +54,9 @@ const Resume: NextPage = () => {
           <SectionSummary />
           <SectionSkills />
           <SectionProjects />
-          <SectionExperiences />
+          <SectionCertificates />
           <SectionEducations />
+          <SectionExperiences />
         </main>
       </div>
     </>
