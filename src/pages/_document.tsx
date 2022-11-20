@@ -85,11 +85,11 @@ export default function Document() {
           crossOrigin=""
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu:wght@400;700&display=swap"
           rel="stylesheet"
         />
       </Head>
-      <body className="text-stone-700">
+      <body className="bg-zinc-900 text-zinc-100">
         <Main />
         <NextScript />
       </body>
