@@ -9,7 +9,7 @@ export interface HeaderButtonProps {
 }
 
 const BASE_CLASS =
-  'rounded-md py-2 px-5 transition-all hover:bg-zinc-800 hover:shadow hover:text-white';
+  'py-2 px-5 transition-all hover:bg-zinc-800 hover:shadow hover:text-white';
 
 const HeaderButton = ({
   href,
