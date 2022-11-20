@@ -15,7 +15,10 @@ const Header = () => {
     >
       <div className="container mx-auto flex flex-col text-lg sm:flex-row sm:items-center">
         <div className="flex items-center border-b border-zinc-600 p-2 sm:border-0 sm:p-4">
-          <HeaderButton className="text-2xl font-bold uppercase" href="/">
+          <HeaderButton
+            className="text-2xl font-bold uppercase tracking-[.3em]"
+            href="/"
+          >
             Royman
           </HeaderButton>
 
