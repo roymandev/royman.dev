@@ -9,7 +9,7 @@ const SectionCertificates = () => (
         <li key={certificate.url}>
           <BaseLink
             href={certificate.url}
-            className="border-b border-dashed border-stone-500 transition-all hover:border-solid hover:border-stone-500 print:border-stone-500"
+            className="border-b border-dashed border-zinc-500 transition-all hover:border-solid hover:border-zinc-500 print:border-zinc-500"
           >
             {certificate.title}
           </BaseLink>

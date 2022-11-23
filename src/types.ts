@@ -12,7 +12,7 @@ export interface AppData {
   description: string;
   techs: TechList[];
   iconUrl?: string;
-  imageUrl?: string;
+  imageUrl: string;
   liveUrl?: string;
-  repo: string;
+  repoUrl: string;
 }
