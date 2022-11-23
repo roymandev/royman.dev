@@ -7,14 +7,7 @@ import SectionProjects from '@/components/Resume/SectionProjects';
 import SectionExperiences from '@/components/Resume/SectionExperiences';
 import SectionEducations from '@/components/Resume/SectionEducations';
 import CustomSeo from '@/components/utils/CustomSeo';
-import { getBasePageMeta } from '@/lib/getPageMeta';
 import SectionCertificates from '@/components/Resume/SectionCertificates';
-
-const PAGE_META = getBasePageMeta({
-  title: 'Resume',
-  description: 'Personal website',
-  slug: '/resume',
-});
 
 const Resume: NextPage = () => {
   const printHandler = () => {
@@ -23,7 +16,7 @@ const Resume: NextPage = () => {
 
   return (
     <>
-      <CustomSeo {...PAGE_META} />
+      <CustomSeo title="Resume" description="Personal website" slug="/resume" />
 
       <div className="mx-auto flex max-w-lg flex-col gap-16 px-6 py-16 print:max-w-full print:p-0 sm:max-w-4xl sm:py-20 print:sm:p-0">
         <div className="absolute inset-x-0 top-0 bg-zinc-800 py-1 text-center print:hidden">

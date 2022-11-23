@@ -3,19 +3,12 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import CustomSeo from '@/components/utils/CustomSeo';
 import { appsData } from '@/data/appsData';
-import { getBasePageMeta } from '@/lib/getPageMeta';
 import type { NextPage } from 'next';
-
-const PAGE_META = getBasePageMeta({
-  title: 'Royman',
-  description: 'Personal website',
-  slug: '/',
-});
 
 const Home: NextPage = () => {
   return (
     <>
-      <CustomSeo {...PAGE_META} />
+      <CustomSeo title="Royman" description="Personal Website" slug="/" />
 
       <Header />
 
