@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header
       className={twclsx(
-        'fixed inset-x-0 top-0 z-20 border-zinc-600 bg-zinc-900/60 backdrop-blur sm:border-b [&+*]:mt-20',
+        'fixed inset-x-0 top-0 z-20 border-zinc-600 bg-zinc-900/80 backdrop-blur sm:border-b [&+*]:mt-20',
         navOpen && 'h-screen sm:h-auto',
       )}
     >
