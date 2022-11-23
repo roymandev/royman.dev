@@ -17,7 +17,7 @@ const AppListItem = ({
   <BaseLink
     href={repoUrl}
     className={twclsx(
-      'gap-4 w-[400px] px-6 py-4 text-left transition-all border border-dashed border-zinc-700 hover:border-transparent hover:bg-zinc-800 hover:shadow flex',
+      'flex w-[400px] gap-4 border border-dashed border-zinc-700 px-6 py-4 text-left transition-all hover:border-transparent hover:bg-zinc-800 hover:shadow',
       iconUrl && 'px-4',
     )}
   >

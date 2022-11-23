@@ -36,7 +36,7 @@ const Header = () => {
 
         <div
           className={twclsx(
-            'sm:ml-auto sm:justify-end gap-2 p-2',
+            'gap-2 p-2 sm:ml-auto sm:justify-end',
             navOpen ? 'flex flex-col sm:flex-row' : 'hidden sm:flex',
           )}
         >
