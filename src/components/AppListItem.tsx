@@ -1,56 +1,33 @@
 import BaseLink from '@/components/BaseLink';
-import { AppData, TechList } from '@/types';
-import { createElement } from 'react';
-import { RiReactjsFill } from 'react-icons/ri';
-import {
-  SiFirebase,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiTypescript,
-  SiVite,
-} from 'react-icons/si';
+import twclsx from '@/lib/twclsx';
+import { AppData } from '@/types';
+import Image from 'next/image';
 
-export interface AppListItemProps {
-  app: AppData;
-}
+export type AppListItemProps = Pick<
+  AppData,
+  'title' | 'description' | 'iconUrl' | 'repoUrl'
+>;
 
-const getIcon = (tech: TechList) => {
-  switch (tech) {
-    case 'react':
-      return RiReactjsFill;
-    case 'typescript':
-      return SiTypescript;
-    case 'firebase':
-      return SiFirebase;
-    case 'tailwindcss':
-      return SiTailwindcss;
-    case 'vite':
-      return SiVite;
-    case 'nextjs':
-      return SiNextdotjs;
-    default:
-      return null;
-  }
-};
-
-const AppListItem = ({ app }: AppListItemProps) => (
+const AppListItem = ({
+  title,
+  description,
+  iconUrl,
+  repoUrl,
+}: AppListItemProps) => (
   <BaseLink
-    href={app.liveUrl || app.repo}
-    className="block flex-1 shrink-0 border border-dashed border-stone-300 py-4 px-6 text-center transition-all hover:border-solid hover:border-stone-400 hover:shadow-lg md:max-w-[50%]"
+    href={repoUrl}
+    className={twclsx(
+      'gap-4 w-[400px] px-6 py-4 text-left transition-all border border-dashed border-zinc-700 hover:border-transparent hover:bg-zinc-800 hover:shadow flex',
+      iconUrl && 'px-4',
+    )}
   >
-    <h3 className="mb-2 text-xl font-bold">{app.title}</h3>
-    <p>{app.description}</p>
-    <div className="mt-4 flex items-center justify-center gap-2">
-      {app.techs.map((tech) => {
-        const icon = getIcon(tech);
-        if (icon)
-          return createElement(icon, { key: tech, className: 'h-5 w-5' });
-        return (
-          <span key={tech} className="text-sm font-medium">
-            {tech}
-          </span>
-        );
-      })}
+    <div className="h-20 w-20 shrink-0">
+      {iconUrl && <Image src={iconUrl} alt={title} width="80" height="80" />}
+    </div>
+
+    <div className="flex flex-col justify-center">
+      <h3 className="mb-1 text-lg font-bold text-zinc-300">{title}</h3>
+      <p className="text-base text-zinc-400">{description}</p>
     </div>
   </BaseLink>
 );

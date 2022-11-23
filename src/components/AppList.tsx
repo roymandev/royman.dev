@@ -1,14 +1,13 @@
-import AppListItem from '@/components/AppListItem';
-import { AppData } from '@/types';
+import AppListItem, { AppListItemProps } from '@/components/AppListItem';
 
 export interface AppListProps {
-  apps: AppData[];
+  apps: AppListItemProps[];
 }
 
 const AppList = ({ apps }: AppListProps) => (
-  <div className="flex flex-col justify-center gap-4 px-4 sm:flex-row">
+  <div className="flex flex-wrap justify-center gap-2">
     {apps.map((app) => (
-      <AppListItem key={app.liveUrl} app={app} />
+      <AppListItem key={app.repoUrl} {...app} />
     ))}
   </div>
 );
