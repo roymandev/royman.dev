@@ -16,3 +16,21 @@ export interface AppData {
   liveUrl?: string;
   repoUrl: string;
 }
+
+export type PostType = 'project';
+
+export interface BasePost<T = BasePostHeader> {
+  content: string;
+  header: { slug: string } & T;
+}
+
+export interface BasePostHeader {
+  title: string;
+  description: string;
+  slug: string;
+}
+
+export interface ProjectPostHeader extends BasePostHeader {
+  type: 'application' | 'submission';
+  tech: TechList[];
+}
