@@ -7,16 +7,6 @@ export type TechList =
   | 'jotai'
   | 'nextjs';
 
-export interface AppData {
-  title: string;
-  description: string;
-  techs: TechList[];
-  iconUrl?: string;
-  imageUrl: string;
-  liveUrl?: string;
-  repoUrl: string;
-}
-
 export type PostType = 'project';
 
 export interface BasePost<T = BasePostHeader> {
@@ -32,5 +22,9 @@ export interface BasePostHeader {
 
 export interface ProjectPostHeader extends BasePostHeader {
   type: 'application' | 'submission';
-  tech: TechList[];
+  techs: TechList[];
+  liveUrl?: string;
+  repoUrl?: string;
+  iconUrl?: string;
+  imageUrl?: string;
 }
