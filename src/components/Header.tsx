@@ -9,12 +9,12 @@ const Header = () => {
   return (
     <header
       className={twclsx(
-        'fixed inset-x-0 top-0 z-20 border-zinc-600 bg-zinc-900/80 backdrop-blur sm:border-b [&+*]:mt-20',
+        'fixed inset-x-0 top-0 z-20 border-zinc-600 bg-zinc-900/80 backdrop-blur sm:border-b [&+*]:mt-16',
         navOpen && 'h-screen sm:h-auto',
       )}
     >
       <div className="container mx-auto flex flex-col text-lg sm:flex-row sm:items-center">
-        <div className="flex items-center border-b border-zinc-600 p-2 sm:border-0 sm:p-4">
+        <div className="flex h-16 items-center border-b border-zinc-600 px-2 sm:border-0 sm:p-4">
           <CustomButton
             className="text-2xl font-bold uppercase tracking-[.3em]"
             type="secondary"
