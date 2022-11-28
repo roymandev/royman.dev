@@ -7,7 +7,7 @@ export interface AppListProps {
 const AppList = ({ apps }: AppListProps) => (
   <div className="flex flex-wrap justify-center gap-2">
     {apps.map((app) => (
-      <AppListItem key={app.repoUrl} {...app} />
+      <AppListItem key={app.slug} {...app} />
     ))}
   </div>
 );
