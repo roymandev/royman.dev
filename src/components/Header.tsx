@@ -43,6 +43,9 @@ const Header = () => {
             navOpen ? 'flex flex-col sm:flex-row' : 'hidden sm:flex',
           )}
         >
+          <CustomButton type="secondary" href="/project">
+            Projects
+          </CustomButton>
           <CustomButton type="secondary" href="/resume">
             Resume
           </CustomButton>
