@@ -76,7 +76,7 @@ const ProjectDetailPage: NextPage<ProjectDetailPageProps> = ({
         </div>
       </section>
 
-      <section className="mx-auto mt-10 max-w-4xl">
+      <article className="mx-auto mt-10 max-w-4xl">
         {header.imageUrl && (
           <Image
             src={header.imageUrl}
@@ -86,8 +86,10 @@ const ProjectDetailPage: NextPage<ProjectDetailPageProps> = ({
           />
         )}
 
-        <MDXRemote {...mdxSource} />
-      </section>
+        <section className="px-6">
+          <MDXRemote {...mdxSource} />
+        </section>
+      </article>
     </main>
 
     <Footer />
