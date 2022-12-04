@@ -1,4 +1,4 @@
-import HeaderButton from '@/components/HeaderButton';
+import CustomButton from '@/components/CustomButton';
 import twclsx from '@/lib/twclsx';
 import { useState } from 'react';
 import { HiBars3, HiXMark } from 'react-icons/hi2';
@@ -9,21 +9,24 @@ const Header = () => {
   return (
     <header
       className={twclsx(
-        'fixed inset-x-0 top-0 z-20 border-zinc-600 bg-zinc-900/80 backdrop-blur sm:border-b [&+*]:mt-20',
+        'fixed inset-x-0 top-0 z-20 border-zinc-600 bg-zinc-900/80 backdrop-blur sm:border-b [&+*]:mt-16',
         navOpen && 'h-screen sm:h-auto',
       )}
     >
       <div className="container mx-auto flex flex-col text-lg sm:flex-row sm:items-center">
-        <div className="flex items-center border-b border-zinc-600 p-2 sm:border-0 sm:p-4">
-          <HeaderButton
+        <div className="flex h-16 items-center border-b border-zinc-600 px-2 sm:border-0 sm:p-4">
+          <CustomButton
             className="text-2xl font-bold uppercase tracking-[.3em]"
+            type="secondary"
             href="/"
           >
             Royman
-          </HeaderButton>
+          </CustomButton>
 
-          <HeaderButton
-            className="ml-auto mr-2 flex items-center justify-center p-2 sm:hidden"
+          <CustomButton
+            className="ml-auto sm:hidden"
+            type="secondary"
+            icon
             onClick={() => setNavOpen(!navOpen)}
           >
             {navOpen ? (
@@ -31,7 +34,7 @@ const Header = () => {
             ) : (
               <HiBars3 className="h-6 w-6" />
             )}
-          </HeaderButton>
+          </CustomButton>
         </div>
 
         <div
@@ -40,10 +43,15 @@ const Header = () => {
             navOpen ? 'flex flex-col sm:flex-row' : 'hidden sm:flex',
           )}
         >
-          <HeaderButton href="/resume">Resume</HeaderButton>
-          <HeaderButton href="https://github.com/roymandev">
+          <CustomButton type="secondary" href="/project">
+            Projects
+          </CustomButton>
+          <CustomButton type="secondary" href="/resume">
+            Resume
+          </CustomButton>
+          <CustomButton type="secondary" href="https://github.com/roymandev">
             Github
-          </HeaderButton>
+          </CustomButton>
         </div>
       </div>
     </header>

@@ -2,10 +2,15 @@ import AppList from '@/components/AppList';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import CustomSeo from '@/components/utils/CustomSeo';
-import { appsData } from '@/data/appsData';
-import type { NextPage } from 'next';
+import { getPosts } from '@/lib/mdx';
+import { ProjectPostHeader } from '@/types';
+import type { GetStaticProps, NextPage } from 'next';
 
-const Home: NextPage = () => {
+export interface HomePageProps {
+  applications: ProjectPostHeader[];
+}
+
+const Home: NextPage<HomePageProps> = ({ applications }) => {
   return (
     <>
       <CustomSeo title="Royman" description="Personal Website" slug="/" />
@@ -32,13 +37,25 @@ const Home: NextPage = () => {
             Apps that i made, more app coming soon.
           </p>
 
-          <AppList apps={appsData} />
+          <AppList apps={applications} />
         </section>
       </main>
 
       <Footer />
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
+  const projects = (await getPosts<ProjectPostHeader>('/project')).map(
+    (project) => project.header,
+  );
+
+  const applications = projects.filter(
+    (project) => project.type === 'application',
+  );
+
+  return { props: { applications } };
 };
 
 export default Home;
