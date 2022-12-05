@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <header
       className={twclsx(
-        'container inset-0 z-10 mx-auto flex flex-col gap-8 bg-zinc-900 p-8 sm:flex-row-reverse',
+        'container inset-0 z-10 mx-auto flex max-w-4xl flex-col gap-8 bg-zinc-900 p-8 sm:flex-row-reverse',
         navOpen && 'fixed sm:relative',
       )}
     >
@@ -40,7 +40,7 @@ const Header = () => {
 
       <nav
         className={twclsx(
-          'flex flex-col gap-2 sm:mr-auto sm:flex-row',
+          'flex flex-col gap-2 sm:mr-auto sm:flex-row sm:gap-0',
           !navOpen && 'hidden sm:flex',
         )}
       >
