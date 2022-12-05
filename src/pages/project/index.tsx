@@ -1,4 +1,4 @@
-import AppList from '@/components/AppList';
+import AppListItem from '@/components/AppListItem';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import CustomSeo from '@/components/utils/CustomSeo';
@@ -20,14 +20,21 @@ const ProjectListPage: NextPage<ProjectListPageProps> = ({ apps }) => (
 
     <Header />
 
-    <main className="container mx-auto py-20 px-2 text-center">
+    <main className="container mx-auto max-w-4xl p-8">
       <section className="mx-auto mb-10">
-        <h1 className="mb-4 text-4xl font-bold">Project</h1>
-        <p>Showcase of my project</p>
+        <h1 className="mb-4 text-5xl font-bold">Projects</h1>
+        <p className="text-cyan-100/50">
+          Showcase of my project that I&apos;ve created using with my knowledge
+          in Frontend Development.
+        </p>
       </section>
 
       <section className="mx-auto">
-        <AppList apps={apps} />
+        <section className="mt-4 grid gap-4 md:grid-cols-2">
+          {apps.map((app) => (
+            <AppListItem key={app.slug} {...app} />
+          ))}
+        </section>
       </section>
     </main>
 
