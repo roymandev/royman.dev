@@ -20,7 +20,7 @@ const ProjectListPage: NextPage<ProjectListPageProps> = ({ apps }) => (
 
     <Header />
 
-    <main className="container mx-auto max-w-4xl p-8">
+    <main className="container mx-auto max-w-4xl py-8 px-6">
       <section className="mx-auto mb-10">
         <h1 className="mb-4 text-5xl font-bold">Projects</h1>
         <p className="text-cyan-100/50">
