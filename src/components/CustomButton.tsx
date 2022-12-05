@@ -19,9 +19,9 @@ const CustomButton = ({
   icon = false,
 }: CustomButtonProps) => {
   const BASE_CLASS = twclsx(
-    'flex h-12 items-center transition-all hover:bg-zinc-700/60 hover:text-white',
-    icon ? 'w-12 justify-center' : 'px-5',
-    type === 'primary' && 'bg-zinc-800 shadow',
+    'flex h-11 items-center rounded-lg transition-all hover:bg-cyan-100/5',
+    icon ? 'w-11 justify-center' : 'px-5',
+    type === 'primary' && 'bg-cyan-100/5 shadow hover:bg-cyan-100/10',
   );
 
   if (href)
