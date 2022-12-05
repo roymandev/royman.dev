@@ -40,7 +40,7 @@ const Header = () => {
 
       <nav
         className={twclsx(
-          'flex flex-col gap-2 sm:mr-auto sm:flex-row sm:gap-0',
+          'flex flex-col gap-2 sm:-ml-5 sm:mr-auto sm:flex-row sm:gap-0',
           !navOpen && 'hidden sm:flex',
         )}
       >
