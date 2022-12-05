@@ -1,4 +1,5 @@
 import AppListItem from '@/components/AppListItem';
+import CustomLink from '@/components/CustomLink';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import CustomSeo from '@/components/utils/CustomSeo';
@@ -35,11 +36,13 @@ const Home: NextPage<HomePageProps> = ({ applications }) => {
         <section className="text-left">
           <h2 className="text-2xl font-bold">My Application</h2>
 
-          <section className="mt-4 grid gap-4 md:grid-cols-2">
+          <div className="mt-4 mb-2 grid gap-4 md:grid-cols-2">
             {applications.map((app) => (
               <AppListItem key={app.slug} {...app} />
             ))}
-          </section>
+          </div>
+
+          <CustomLink href="/project">See all my projects</CustomLink>
         </section>
       </main>
 
