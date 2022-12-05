@@ -30,9 +30,9 @@ const ProjectDetailPage: NextPage<ProjectDetailPageProps> = ({
 
     <Header />
 
-    <main className="container mx-auto sm:px-6">
-      <section className="mx-auto max-w-4xl pt-6 sm:pt-16">
-        <div className="flex flex-col-reverse gap-4 px-6 sm:flex-row sm:gap-6 sm:px-0">
+    <main className="container mx-auto max-w-4xl">
+      <section className="px-6 pt-6 sm:pt-16">
+        <div className="flex flex-col-reverse gap-4 sm:flex-row sm:gap-6 sm:px-0">
           <div className="flex flex-1 flex-col items-start">
             <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">
               {header.title}
