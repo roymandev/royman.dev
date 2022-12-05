@@ -1,7 +1,9 @@
 import CustomButton from '@/components/CustomButton';
+import NavItem from '@/components/NavItem';
 import twclsx from '@/lib/twclsx';
 import { useState } from 'react';
-import { HiBars3, HiXMark } from 'react-icons/hi2';
+import { HiBars2, HiXMark } from 'react-icons/hi2';
+import { RiGithubFill } from 'react-icons/ri';
 
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -9,51 +11,43 @@ const Header = () => {
   return (
     <header
       className={twclsx(
-        'fixed inset-x-0 top-0 z-20 border-zinc-600 bg-zinc-900/80 backdrop-blur sm:border-b [&+*]:mt-16',
-        navOpen && 'h-screen sm:h-auto',
+        'container inset-0 z-10 mx-auto flex flex-col gap-8 bg-zinc-900 p-8 sm:flex-row-reverse',
+        navOpen && 'fixed sm:relative',
       )}
     >
-      <div className="container mx-auto flex flex-col text-lg sm:flex-row sm:items-center">
-        <div className="flex h-16 items-center border-b border-zinc-600 px-2 sm:border-0 sm:p-4">
-          <CustomButton
-            className="text-2xl font-bold uppercase tracking-[.3em]"
-            type="secondary"
-            href="/"
-          >
-            Royman
-          </CustomButton>
-
-          <CustomButton
-            className="ml-auto sm:hidden"
-            type="secondary"
-            icon
-            onClick={() => setNavOpen(!navOpen)}
-          >
-            {navOpen ? (
-              <HiXMark className="h-6 w-6" />
-            ) : (
-              <HiBars3 className="h-6 w-6" />
-            )}
-          </CustomButton>
-        </div>
-
-        <div
-          className={twclsx(
-            'gap-2 p-2 sm:ml-auto sm:justify-end',
-            navOpen ? 'flex flex-col sm:flex-row' : 'hidden sm:flex',
-          )}
+      <div className="m:ml-auto flex">
+        <CustomButton
+          icon
+          type="secondary"
+          onClick={() => setNavOpen(!navOpen)}
+          className="sm:hidden"
         >
-          <CustomButton type="secondary" href="/project">
-            Projects
-          </CustomButton>
-          <CustomButton type="secondary" href="/resume">
-            Resume
-          </CustomButton>
-          <CustomButton type="secondary" href="https://github.com/roymandev">
-            Github
-          </CustomButton>
-        </div>
+          {navOpen ? (
+            <HiXMark className="h-6 w-6" />
+          ) : (
+            <HiBars2 className="h-6 w-6" />
+          )}
+        </CustomButton>
+
+        <CustomButton
+          href="https://github.com/roymandev"
+          icon
+          className="z-20 ml-auto"
+        >
+          <RiGithubFill className="h-6 w-6" />
+        </CustomButton>
       </div>
+
+      <nav
+        className={twclsx(
+          'flex flex-col gap-2 sm:mr-auto sm:flex-row',
+          !navOpen && 'hidden sm:flex',
+        )}
+      >
+        <NavItem href="/">Home</NavItem>
+        <NavItem href="/project">Projects</NavItem>
+        <NavItem href="/resume">Resume</NavItem>
+      </nav>
     </header>
   );
 };
