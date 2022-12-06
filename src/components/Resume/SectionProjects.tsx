@@ -7,10 +7,7 @@ const SectionProjects = () => (
       {royman.apps.map((app) => (
         <li key={app.url} className="flex flex-col gap-2">
           <h3 className="font-medium">
-            <a
-              href={app.url}
-              className="border-b border-dashed border-zinc-500 transition-all hover:border-solid hover:border-zinc-500 print:border-zinc-500"
-            >
+            <a href={app.url} className="underline">
               {app.title} - {app.description}
             </a>
           </h3>

@@ -18,8 +18,8 @@ const Resume: NextPage = () => {
     <>
       <CustomSeo title="Resume" description="Personal website" slug="/resume" />
 
-      <div className="mx-auto flex max-w-lg flex-col gap-16 px-6 py-16 print:max-w-full print:p-0 sm:max-w-4xl sm:py-20 print:sm:p-0">
-        <div className="absolute inset-x-0 top-0 bg-zinc-800 py-1 text-center print:hidden">
+      <div className="mx-auto flex max-w-lg flex-col gap-16 px-6 py-28 print:max-w-full print:p-0 print:text-black sm:max-w-4xl print:sm:p-0">
+        <div className="absolute inset-x-0 top-0 bg-cyan-100/5 py-1 text-center print:hidden">
           You can{' '}
           <button className="font-bold underline" onClick={printHandler}>
             print
@@ -27,9 +27,9 @@ const Resume: NextPage = () => {
           this page to get the PDF version.
         </div>
 
-        <header className="flex flex-col items-center border-b border-zinc-700 pb-6 print:mx-0 print:mt-0 print:max-w-none sm:flex-row sm:pb-10">
+        <header className="flex flex-col items-center border-b border-cyan-100/20 pb-6 print:mx-0 print:mt-0 print:max-w-none print:border-black sm:flex-row sm:pb-10">
           <div>
-            <h1 className="mb-4 text-5xl font-bold">
+            <h1 className="mb-2 text-5xl font-bold">
               <BaseLink href="/" className="uppercase tracking-[.5rem]">
                 Royman
               </BaseLink>
