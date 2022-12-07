@@ -1,6 +1,7 @@
 import CustomButton from '@/components/CustomButton';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import TechIcon from '@/components/TechIcon';
 import CustomSeo from '@/components/utils/CustomSeo';
 import { getPostBySlug, getPosts } from '@/lib/mdx';
 import { BasePostHeader, ProjectPostHeader } from '@/types';
@@ -39,6 +40,12 @@ const ProjectDetailPage: NextPage<ProjectDetailPageProps> = ({
             </h1>
             <p className="mt-4 sm:text-lg">{header.description}</p>
 
+            <div className="mt-6 flex flex-wrap items-center gap-2">
+              {header.techs.map((tech) => (
+                <TechIcon key={tech} tech={tech} />
+              ))}
+            </div>
+
             <div className="mt-6 flex items-center gap-2">
               {header.liveUrl && (
                 <CustomButton href={header.liveUrl}>
@@ -53,14 +60,6 @@ const ProjectDetailPage: NextPage<ProjectDetailPageProps> = ({
                 </CustomButton>
               )}
             </div>
-
-            <p className="mt-6 flex flex-wrap gap-1">
-              {header.techs.map((tech) => (
-                <span key={tech} className="border border-zinc-700 px-2">
-                  {tech}
-                </span>
-              ))}
-            </p>
           </div>
 
           {header.iconUrl && (
@@ -76,7 +75,7 @@ const ProjectDetailPage: NextPage<ProjectDetailPageProps> = ({
         </div>
       </section>
 
-      <article className="mx-auto mt-10 max-w-4xl">
+      <article className="mx-auto mt-10 max-w-4xl sm:px-6">
         {header.imageUrl && (
           <Image
             src={header.imageUrl}
@@ -86,7 +85,7 @@ const ProjectDetailPage: NextPage<ProjectDetailPageProps> = ({
           />
         )}
 
-        <section className="px-6">
+        <section className="px-6 sm:px-0">
           <MDXRemote {...mdxSource} />
         </section>
       </article>
