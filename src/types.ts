@@ -21,7 +21,7 @@ export interface BasePostHeader {
 }
 
 export interface ProjectPostHeader extends BasePostHeader {
-  type: 'application' | 'submission';
+  projectType: 'application' | 'submission';
   techs: TechList[];
   liveUrl?: string;
   repoUrl?: string;

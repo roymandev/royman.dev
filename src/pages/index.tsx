@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
   );
 
   const applications = projects.filter(
-    (project) => project.type === 'application',
+    (project) => project.projectType === 'application',
   );
 
   return { props: { applications } };
