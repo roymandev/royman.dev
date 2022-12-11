@@ -1,30 +1,39 @@
 import AppListItem from '@/components/AppListItem';
-import CustomButton from '@/components/CustomButton';
 import CustomInput from '@/components/CustomInput';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import PillsCheckbox from '@/components/PillsCheckbox';
 import CustomSeo from '@/components/utils/CustomSeo';
-import { getPosts } from '@/lib/mdx';
-import twclsx from '@/lib/twclsx';
-import { ProjectPostHeader, TechList } from '@/types';
-import { GetStaticProps, NextPage } from 'next';
+import { allProjects, Project } from 'contentlayer/generated';
+import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import { useDeferredValue, useEffect, useState } from 'react';
 import { HiMagnifyingGlass } from 'react-icons/hi2';
 
 export interface ProjectListPageProps {
-  apps: ProjectPostHeader[];
+  apps: Project[];
 }
 
-const ProjectListPage: NextPage<ProjectListPageProps> = ({ apps }) => {
-  const [techList, setTechList] = useState<TechList[]>([]);
+export const getStaticProps: GetStaticProps<
+  ProjectListPageProps
+> = async () => {
+  return { props: { apps: allProjects } };
+};
+
+const ProjectListPage: NextPage<
+  InferGetStaticPropsType<typeof getStaticProps>
+> = ({ apps }) => {
+  const [techList, setTechList] = useState<Project['techs']>([]);
   const [query, setQuery] = useState('');
   const defferedQuery = useDeferredValue(query);
   const [filteredApps, setFilteredApps] = useState(apps);
-  const [techsFilter, setTechsFilter] = useState<TechList[]>([]);
+  const [filteredAppsTech, setFilteredAppsTech] = useState<Project['techs']>(
+    [],
+  );
+  const [techsFilter, setTechsFilter] = useState<Project['techs']>([]);
 
   useEffect(() => {
     const techs = apps
-      .reduce<TechList[]>((acc, app) => acc.concat(app.techs), [])
+      .reduce<Project['techs']>((acc, app) => acc.concat(app.techs), [])
       .filter((value, index, self) => self.indexOf(value) === index);
 
     setTechList(techs);
@@ -40,6 +49,14 @@ const ProjectListPage: NextPage<ProjectListPageProps> = ({ apps }) => {
 
     setFilteredApps(filteredApps);
   }, [apps, techsFilter, defferedQuery]);
+
+  useEffect(() => {
+    const filteredAppsTech = filteredApps
+      .reduce<Project['techs']>((acc, app) => acc.concat(app.techs), [])
+      .filter((value, index, self) => self.indexOf(value) === index);
+
+    setFilteredAppsTech(filteredAppsTech);
+  }, [filteredApps]);
 
   return (
     <>
@@ -72,30 +89,13 @@ const ProjectListPage: NextPage<ProjectListPageProps> = ({ apps }) => {
             <HiMagnifyingGlass className="absolute top-3 right-3 h-5 w-5 text-cyan-100/50" />
           </div>
 
-          <div className="mt-4 flex flex-wrap items-center gap-1 text-sm">
-            <span className="flex h-7 items-center">Tech list:</span>
-            {techList.map((tech) => (
-              <CustomButton
-                key={tech}
-                className={twclsx(
-                  'h-7 px-2',
-                  techsFilter.includes(tech)
-                    ? 'bg-cyan-100/20 hover:bg-cyan-100/30'
-                    : 'text-cyan-100/50',
-                )}
-                disabled={!filteredApps.find((app) => app.techs.includes(tech))}
-                onClick={() => {
-                  if (techsFilter.includes(tech)) {
-                    setTechsFilter((prevTechs) =>
-                      prevTechs.filter((prevTech) => prevTech !== tech),
-                    );
-                  } else setTechsFilter((prevTechs) => [...prevTechs, tech]);
-                }}
-              >
-                {tech}
-              </CustomButton>
-            ))}
-          </div>
+          <PillsCheckbox
+            items={techList}
+            activeItems={filteredAppsTech}
+            selectedItems={techsFilter}
+            onChange={setTechsFilter}
+            className="mt-4"
+          />
 
           <section className="mt-4 grid gap-4 md:grid-cols-2">
             {filteredApps.map((app) => (
@@ -108,16 +108,6 @@ const ProjectListPage: NextPage<ProjectListPageProps> = ({ apps }) => {
       <Footer />
     </>
   );
-};
-
-export const getStaticProps: GetStaticProps<
-  ProjectListPageProps
-> = async () => {
-  const projects = await getPosts<ProjectPostHeader>('/project');
-
-  const apps = projects.map((project) => project.header);
-
-  return { props: { apps } };
 };
 
 export default ProjectListPage;
