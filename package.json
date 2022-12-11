@@ -13,9 +13,10 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
+    "contentlayer": "^0.2.9",
     "gray-matter": "^4.0.3",
     "next": "12.2.3",
-    "next-mdx-remote": "^4.2.0",
+    "next-contentlayer": "^0.2.9",
     "next-seo": "^5.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",

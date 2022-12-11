@@ -3,13 +3,22 @@ import CustomLink from '@/components/CustomLink';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import CustomSeo from '@/components/utils/CustomSeo';
-import { getPosts } from '@/lib/mdx';
-import { ProjectPostHeader } from '@/types';
+import { allProjects, Project } from 'contentlayer/generated';
 import type { GetStaticProps, NextPage } from 'next';
 
 export interface HomePageProps {
-  applications: ProjectPostHeader[];
+  applications: Project[];
 }
+
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
+  return {
+    props: {
+      applications: allProjects.filter(
+        (app) => app.projectType === 'application',
+      ),
+    },
+  };
+};
 
 const Home: NextPage<HomePageProps> = ({ applications }) => {
   return (
@@ -49,18 +58,6 @@ const Home: NextPage<HomePageProps> = ({ applications }) => {
       <Footer />
     </>
   );
-};
-
-export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
-  const projects = (await getPosts<ProjectPostHeader>('/project')).map(
-    (project) => project.header,
-  );
-
-  const applications = projects.filter(
-    (project) => project.type === 'application',
-  );
-
-  return { props: { applications } };
 };
 
 export default Home;
