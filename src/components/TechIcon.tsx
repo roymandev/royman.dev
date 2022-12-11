@@ -1,5 +1,5 @@
 import twclsx from '@/lib/twclsx';
-import { TechList } from '@/types';
+import { Project } from 'contentlayer/generated';
 import {
   SiFirebase,
   SiNextdotjs,
@@ -10,7 +10,7 @@ import {
 } from 'react-icons/si';
 
 export interface TechIconProps {
-  tech: TechList;
+  tech: Project['techs'][0];
   className?: string;
 }
 

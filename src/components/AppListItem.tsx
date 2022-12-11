@@ -1,15 +1,8 @@
 import CustomButton from '@/components/CustomButton';
-import { ProjectPostHeader } from '@/types';
+import { Project } from 'contentlayer/generated';
 import Image from 'next/image';
 
-export type AppListItemProps = ProjectPostHeader;
-
-const AppListItem = ({
-  title,
-  description,
-  iconUrl,
-  slug,
-}: AppListItemProps) => (
+const AppListItem = ({ title, description, iconUrl, slug }: Project) => (
   <CustomButton
     key={slug}
     href={`project/${slug}`}

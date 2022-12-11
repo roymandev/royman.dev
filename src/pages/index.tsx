@@ -3,12 +3,11 @@ import CustomLink from '@/components/CustomLink';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import CustomSeo from '@/components/utils/CustomSeo';
-import { ProjectPostHeader } from '@/types';
-import { allProjects } from 'contentlayer/generated';
+import { allProjects, Project } from 'contentlayer/generated';
 import type { GetStaticProps, NextPage } from 'next';
 
 export interface HomePageProps {
-  applications: ProjectPostHeader[];
+  applications: Project[];
 }
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
