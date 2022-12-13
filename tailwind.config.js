@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-/** @type {import('tailwindcss').Config} */
 
 const defaultTheme = require('tailwindcss/defaultTheme');
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Rubik', ...defaultTheme.fontFamily.sans],
+        sans: ['Lexend Deca', ...defaultTheme.fontFamily.sans],
       },
     },
   },
