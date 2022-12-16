@@ -21,10 +21,12 @@ const CustomButton = ({
   disabled = false,
 }: CustomButtonProps) => {
   const BASE_CLASS = twclsx(
-    'flex h-11 items-center rounded-lg transition duration-300 hover:bg-cyan-100/5 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500/70 ',
+    'flex h-11 items-center rounded-lg transition duration-500 hover:bg-slate-400/60',
+    'outline-none ring-2 ring-transparent focus-visible:outline-none focus-visible:ring-indigo-500/90',
+    'dark:hover:bg-neutral-700/60',
     icon ? 'w-11 justify-center' : 'px-5',
     type === 'primary' &&
-      'bg-cyan-100/5 shadow hover:bg-cyan-100/10 disabled:bg-transparent disabled:text-cyan-100/50 disabled:shadow-none',
+      'bg-slate-400/30 hover:bg-slate-400/60 dark:bg-neutral-700/30 dark:hover:bg-neutral-700/60',
   );
 
   if (href)
