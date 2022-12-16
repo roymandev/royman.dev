@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
@@ -89,7 +90,12 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className="bg-slate-300 text-slate-800 antialiased">
+      <body
+        className={clsx(
+          'bg-slate-300 text-slate-800 antialiased transition-colors duration-500',
+          'dark:bg-neutral-900 dark:text-neutral-300',
+        )}
+      >
         <Main />
         <NextScript />
       </body>
