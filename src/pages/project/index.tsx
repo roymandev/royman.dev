@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import PillsCheckbox from '@/components/PillsCheckbox';
 import CustomSeo from '@/components/utils/CustomSeo';
+import clsx from 'clsx';
 import { allProjects, Project } from 'contentlayer/generated';
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import { useDeferredValue, useEffect, useState } from 'react';
@@ -71,7 +72,7 @@ const ProjectListPage: NextPage<
       <main className="container mx-auto max-w-4xl py-8 px-6">
         <section className="mx-auto mb-10">
           <h1 className="mb-4 text-5xl font-bold">Projects</h1>
-          <p className="text-cyan-100/50">
+          <p className="text-slate-600 transition-colors duration-500 dark:text-neutral-500">
             Showcase of my project that I&apos;ve created using with my
             knowledge in Frontend Development.
           </p>
@@ -81,12 +82,18 @@ const ProjectListPage: NextPage<
           <div className="relative">
             <CustomInput
               type="text"
-              className="w-full pr-11"
+              className="peer w-full pr-11"
               placeholder="Search projects"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
-            <HiMagnifyingGlass className="absolute top-3 right-3 h-5 w-5 text-cyan-100/50" />
+            <HiMagnifyingGlass
+              className={clsx(
+                'absolute top-3 right-3 h-5 w-5 text-slate-600 transition-all duration-200',
+                'peer-focus:top-2.5 peer-focus:right-2.5 peer-focus:h-6 peer-focus:w-6',
+                'dark:text-neutral-500',
+              )}
+            />
           </div>
 
           <PillsCheckbox
@@ -94,10 +101,10 @@ const ProjectListPage: NextPage<
             activeItems={filteredAppsTech}
             selectedItems={techsFilter}
             onChange={setTechsFilter}
-            className="mt-4"
+            className="mt-2"
           />
 
-          <section className="mt-4 grid gap-4 md:grid-cols-2">
+          <section className="mt-6 grid gap-4 md:grid-cols-2">
             {filteredApps.map((app) => (
               <AppListItem key={app.slug} {...app} />
             ))}
