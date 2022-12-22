@@ -82,7 +82,7 @@ const ProjectListPage: NextPage<
           <div className="relative">
             <CustomInput
               type="text"
-              className="peer w-full pr-11"
+              className="w-full pr-11"
               placeholder="Search projects"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
@@ -90,7 +90,6 @@ const ProjectListPage: NextPage<
             <HiMagnifyingGlass
               className={clsx(
                 'absolute top-3 right-3 h-5 w-5 text-slate-600',
-                'peer-focus:top-2.5 peer-focus:right-2.5 peer-focus:h-6 peer-focus:w-6',
                 'dark:text-neutral-500',
               )}
             />
