@@ -14,7 +14,7 @@ const BASE_CLASS =
 
 const ThemeButton = ({ className }: ThemeButtonProps) => {
   const [mounted, setMounted] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const { resolvedTheme, toggleTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -41,10 +41,10 @@ const ThemeButton = ({ className }: ThemeButtonProps) => {
       )}
       onClick={toggleTheme}
     >
-      {theme === 'dark' ? (
-        <HiSun className={twclsx(BASE_CLASS, 'text-neutral-300')} />
+      {resolvedTheme === 'dark' ? (
+        <HiMoon className={BASE_CLASS} />
       ) : (
-        <HiMoon className={twclsx(BASE_CLASS, 'text-slate-800')} />
+        <HiSun className={BASE_CLASS} />
       )}
     </CustomButton>
   );

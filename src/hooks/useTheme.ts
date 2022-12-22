@@ -1,11 +1,12 @@
 import { useTheme as useNextTheme } from 'next-themes';
 
 const useTheme = () => {
-  const { theme, setTheme } = useNextTheme();
+  const { resolvedTheme, setTheme } = useNextTheme();
 
-  const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
+  const toggleTheme = () =>
+    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
 
-  return { theme, toggleTheme };
+  return { resolvedTheme, toggleTheme };
 };
 
 export default useTheme;
