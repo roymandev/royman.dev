@@ -27,7 +27,7 @@ const Home: NextPage<HomePageProps> = ({ applications }) => {
 
       <Header />
 
-      <main className="container mx-auto max-w-4xl px-4">
+      <main className="container mx-auto max-w-4xl px-6">
         <section className="py-40 text-center">
           <header>
             <h1 className="text-5xl font-bold uppercase tracking-[.2em]">
