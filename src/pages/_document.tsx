@@ -92,7 +92,7 @@ export default function Document() {
       </Head>
       <body
         className={clsx(
-          'bg-slate-300 text-slate-800 antialiased transition-colors duration-500',
+          'bg-slate-300 text-slate-800 antialiased',
           'dark:bg-neutral-900 dark:text-neutral-300',
         )}
       >

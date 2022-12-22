@@ -20,7 +20,7 @@ const PillsCheckbox = <ItemType extends string>({
       <button
         key={item}
         className={twclsx(
-          'rounded-lg bg-slate-400/30 px-3 py-1 capitalize transition duration-500 hover:bg-slate-400/60',
+          'rounded-lg bg-slate-400/30 px-3 py-1 capitalize hover:bg-slate-400/60',
           'ring-2 ring-transparent focus:outline-none focus-visible:outline-none focus-visible:ring-indigo-500/90',
           'disabled:bg-transparent disabled:text-slate-600',
           'dark:bg-neutral-700/30 dark:disabled:text-neutral-600',

@@ -10,7 +10,7 @@ export interface ThemeButtonProps {
 }
 
 const BASE_CLASS =
-  'h-5 w-5 transition-all duration-200 group-hover:h-7 group-hover:w-7';
+  'h-5 w-5 group-hover:h-7 group-hover:w-7 transition-[widht,height]';
 
 const ThemeButton = ({ className }: ThemeButtonProps) => {
   const [mounted, setMounted] = useState(false);
@@ -36,7 +36,7 @@ const ThemeButton = ({ className }: ThemeButtonProps) => {
     <CustomButton
       icon
       className={twclsx(
-        'group z-20 transition-all duration-200 hover:rounded-2xl',
+        'group z-20 transition-[border-radius] hover:rounded-2xl',
         className,
       )}
       onClick={toggleTheme}

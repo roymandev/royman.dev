@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <header
       className={twclsx(
-        'container inset-0 z-10 mx-auto flex max-w-4xl flex-col-reverse justify-end gap-8 bg-slate-300 py-8 px-6 transition-colors duration-500 dark:bg-neutral-900 sm:flex-row',
+        'container inset-0 z-10 mx-auto flex max-w-4xl flex-col-reverse justify-end gap-8 bg-slate-300 py-8 px-6 dark:bg-neutral-900 sm:flex-row',
         navOpen && 'fixed sm:relative',
       )}
     >

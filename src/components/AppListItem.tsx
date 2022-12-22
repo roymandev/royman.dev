@@ -15,7 +15,7 @@ const AppListItem = ({ title, description, iconUrl, slug }: Project) => (
     )}
     <div className="flex flex-col justify-center self-center">
       <h3 className="font-bold">{title}</h3>
-      <p className="text-base text-slate-600 transition-colors duration-500 dark:text-neutral-500">
+      <p className="text-base text-slate-600 dark:text-neutral-500">
         {description}
       </p>
     </div>

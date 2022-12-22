@@ -8,14 +8,14 @@ const Footer = () => (
       <div className="flex justify-center gap-6">
         <BaseLink
           href="https://github.com/roymandev"
-          className="transition-colors hover:text-black"
+          className="hover:text-black"
           aria-label="Github"
         >
           <SiGithub className="h-8 w-8" />
         </BaseLink>
         <BaseLink
           href="https://www.linkedin.com/in/roymandev/"
-          className="transition-colors hover:text-blue-600"
+          className="hover:text-blue-600"
           aria-label="LinkedIn"
         >
           <SiLinkedin className="h-8 w-8" />

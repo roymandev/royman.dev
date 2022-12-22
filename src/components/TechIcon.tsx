@@ -29,7 +29,7 @@ const TechIcon = ({ tech, className }: TechIconProps) => {
   if (tech === 'vite') return <SiVite className={BASE_CLASS} title={tech} />;
 
   return (
-    <span className="flex h-6 items-center rounded-md bg-slate-700 px-2 text-sm font-bold text-slate-100 transition-colors duration-500 dark:bg-neutral-300 dark:text-neutral-900">
+    <span className="flex h-6 items-center rounded-md bg-slate-700 px-2 text-sm font-bold text-slate-100 dark:bg-neutral-300 dark:text-neutral-900">
       {tech}
     </span>
   );
