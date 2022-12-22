@@ -8,6 +8,10 @@ import SectionExperiences from '@/components/Resume/SectionExperiences';
 import SectionEducations from '@/components/Resume/SectionEducations';
 import CustomSeo from '@/components/utils/CustomSeo';
 import SectionCertificates from '@/components/Resume/SectionCertificates';
+import Header from '@/components/Header';
+import CustomButton from '@/components/CustomButton';
+import { HiOutlinePrinter } from 'react-icons/hi2';
+import Footer from '@/components/Footer';
 
 const Resume: NextPage = () => {
   const printHandler = () => {
@@ -18,16 +22,17 @@ const Resume: NextPage = () => {
     <>
       <CustomSeo title="Resume" description="Personal website" slug="/resume" />
 
-      <div className="mx-auto flex max-w-lg flex-col gap-16 px-6 py-28 print:max-w-full print:p-0 print:text-black sm:max-w-4xl print:sm:p-0">
-        <div className="absolute inset-x-0 top-0 bg-cyan-100/5 py-1 text-center print:hidden">
-          You can{' '}
-          <button className="font-bold underline" onClick={printHandler}>
-            print
-          </button>{' '}
-          this page to get the PDF version.
-        </div>
+      <Header className="print:hidden" />
 
-        <header className="flex flex-col items-center border-b border-cyan-100/20 pb-6 print:mx-0 print:mt-0 print:max-w-none print:border-black sm:flex-row sm:pb-10">
+      <div className="mt-10 mb-14 flex items-center justify-center gap-3 rounded-lg px-6 print:hidden">
+        <CustomButton icon className="shrink-0" onClick={printHandler}>
+          <HiOutlinePrinter className="h-5 w-5" />
+        </CustomButton>
+        <p>You can print this page to get the PDF version.</p>
+      </div>
+
+      <div className="mx-auto flex max-w-lg flex-col py-5 px-6 print:max-w-full print:p-0 print:text-black sm:max-w-4xl print:sm:p-0">
+        <header className="flex flex-col items-center border-b border-slate-400 pb-6 dark:border-neutral-700 print:border-black sm:flex-row sm:pb-10">
           <div>
             <h1 className="mb-2 text-5xl font-bold">
               <BaseLink href="/" className="uppercase tracking-[.5rem]">
@@ -42,7 +47,7 @@ const Resume: NextPage = () => {
           </article>
         </header>
 
-        <main className="grid grid-cols-1 gap-12 print:grid-cols-2 sm:grid-cols-2">
+        <main className="mt-12 grid grid-cols-1 gap-12 print:grid-cols-2 sm:grid-cols-2">
           <SectionContacts />
           <SectionSummary />
           <SectionSkills />
@@ -52,6 +57,8 @@ const Resume: NextPage = () => {
           <SectionExperiences />
         </main>
       </div>
+
+      <Footer className="print:hidden" />
     </>
   );
 };

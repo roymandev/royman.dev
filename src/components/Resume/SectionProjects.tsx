@@ -1,3 +1,4 @@
+import CustomLink from '@/components/CustomLink';
 import BaseSection from '@/components/Resume/BaseSection';
 import { royman } from '@/data/resumeData';
 
@@ -7,9 +8,9 @@ const SectionProjects = () => (
       {royman.apps.map((app) => (
         <li key={app.url} className="flex flex-col gap-2">
           <h3 className="font-medium">
-            <a href={app.url} className="underline">
+            <CustomLink href={app.url} className="print:decoration-black">
               {app.title} - {app.description}
-            </a>
+            </CustomLink>
           </h3>
           <p>
             <span className="font-medium">Tech used:</span>

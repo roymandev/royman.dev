@@ -7,7 +7,9 @@ const CustomInput = ({
   <input
     type="text"
     className={twclsx(
-      'h-11 rounded-lg bg-cyan-100/5 px-4 transition duration-300 placeholder:text-cyan-100/50 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500/70',
+      'h-11 rounded-lg bg-slate-400/30 px-4 placeholder:text-slate-600',
+      'ring-2 ring-transparent focus:outline-none focus-visible:outline-none focus-visible:ring-indigo-500/90',
+      'dark:bg-neutral-700/30 dark:placeholder:text-neutral-500',
       className,
     )}
     {...rest}

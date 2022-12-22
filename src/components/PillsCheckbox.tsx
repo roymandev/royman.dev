@@ -20,10 +20,13 @@ const PillsCheckbox = <ItemType extends string>({
       <button
         key={item}
         className={twclsx(
-          'rounded-lg px-3 py-1 capitalize transition-colors disabled:bg-transparent disabled:text-cyan-100/50',
+          'rounded-lg bg-slate-400/30 px-3 py-1 capitalize',
+          'dark:bg-neutral-700/30 dark:disabled:text-neutral-600',
+          'ring-2 ring-transparent focus:outline-none focus-visible:outline-none focus-visible:ring-indigo-500/90',
+          'disabled:bg-transparent disabled:text-slate-600 dark:disabled:bg-transparent',
           selectedItems.includes(item)
-            ? 'bg-cyan-100/90 text-zinc-900'
-            : 'bg-cyan-100/5 hover:bg-cyan-100/10',
+            ? 'bg-slate-700 text-slate-100 dark:bg-neutral-300 dark:text-neutral-900'
+            : 'hover:bg-slate-400 dark:hover:bg-neutral-700',
         )}
         disabled={activeItems && !activeItems.includes(item)}
         onClick={() => {

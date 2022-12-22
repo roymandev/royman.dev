@@ -1,28 +1,34 @@
-import BaseLink from '@/components/BaseLink';
-import { SiGithub, SiLinkedin } from 'react-icons/si';
+import CustomButton from '@/components/CustomButton';
+import SocialLinks from '@/components/SocialLinks';
+import twclsx from '@/lib/twclsx';
+import { HiArrowUp } from 'react-icons/hi2';
 
-const Footer = () => (
-  <footer className="my-28 text-center">
-    <section>
-      <h2 className="mb-10 text-2xl font-bold">Find me on</h2>
-      <div className="flex justify-center gap-6">
-        <BaseLink
-          href="https://github.com/roymandev"
-          className="transition-colors hover:text-black"
-          aria-label="Github"
-        >
-          <SiGithub className="h-8 w-8" />
-        </BaseLink>
-        <BaseLink
-          href="https://www.linkedin.com/in/roymandev/"
-          className="transition-colors hover:text-blue-600"
-          aria-label="LinkedIn"
-        >
-          <SiLinkedin className="h-8 w-8" />
-        </BaseLink>
-      </div>
-    </section>
-  </footer>
-);
+export type FooterProps = {
+  className?: string;
+};
+
+const Footer = ({ className }: FooterProps) => {
+  const scrollToTopHandler = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  return (
+    <footer
+      className={twclsx(
+        'container mx-auto flex max-w-4xl items-center gap-3 py-32 px-6',
+        className,
+      )}
+    >
+      <SocialLinks />
+
+      <CustomButton icon className="ml-auto" onClick={scrollToTopHandler}>
+        <HiArrowUp className="h-5 w-5" />
+      </CustomButton>
+    </footer>
+  );
+};
 
 export default Footer;

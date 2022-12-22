@@ -1,3 +1,4 @@
+import CustomLink from '@/components/CustomLink';
 import BaseSection from '@/components/Resume/BaseSection';
 import { royman } from '@/data/resumeData';
 
@@ -6,9 +7,9 @@ const SectionCertificates = () => (
     <ul className="ml-4 list-disc space-y-1">
       {royman.certificates.map((certificate) => (
         <li key={certificate.url}>
-          <a href={certificate.url} className="underline">
+          <CustomLink href={certificate.url} className="print:decoration-black">
             {certificate.title}
-          </a>
+          </CustomLink>
         </li>
       ))}
     </ul>

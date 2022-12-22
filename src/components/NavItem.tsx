@@ -15,7 +15,9 @@ const NavItem = ({ href, children }: NavItemProps) => {
     <CustomButton
       type="secondary"
       href={href}
-      className={twclsx(isActive ? 'font-bold' : 'text-cyan-100/50')}
+      className={twclsx(
+        isActive ? 'font-bold' : 'text-slate-600 dark:text-neutral-500',
+      )}
     >
       {children}
     </CustomButton>

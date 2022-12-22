@@ -17,42 +17,19 @@ export interface TechIconProps {
 const TechIcon = ({ tech, className }: TechIconProps) => {
   const BASE_CLASS = twclsx('h-6 w-6', className);
 
-  if (tech === 'react')
-    return (
-      <SiReact className={twclsx('text-blue-400', BASE_CLASS)} title={tech} />
-    );
+  if (tech === 'react') return <SiReact className={BASE_CLASS} title={tech} />;
   if (tech === 'typescript')
-    return (
-      <SiTypescript
-        className={twclsx('text-blue-400', BASE_CLASS)}
-        title={tech}
-      />
-    );
+    return <SiTypescript className={BASE_CLASS} title={tech} />;
   if (tech === 'firebase')
-    return (
-      <SiFirebase
-        className={twclsx('text-yellow-500', BASE_CLASS)}
-        title={tech}
-      />
-    );
+    return <SiFirebase className={BASE_CLASS} title={tech} />;
   if (tech === 'nextjs')
-    return (
-      <SiNextdotjs className={twclsx('text-white', BASE_CLASS)} title={tech} />
-    );
+    return <SiNextdotjs className={BASE_CLASS} title={tech} />;
   if (tech === 'tailwindcss')
-    return (
-      <SiTailwindcss
-        className={twclsx('text-cyan-400', BASE_CLASS)}
-        title={tech}
-      />
-    );
-  if (tech === 'vite')
-    return (
-      <SiVite className={twclsx('text-yellow-400', BASE_CLASS)} title={tech} />
-    );
+    return <SiTailwindcss className={BASE_CLASS} title={tech} />;
+  if (tech === 'vite') return <SiVite className={BASE_CLASS} title={tech} />;
 
   return (
-    <span className="flex h-6 items-center rounded-md bg-cyan-100/90 px-2 text-sm font-bold text-zinc-900">
+    <span className="flex h-6 items-center rounded-md bg-slate-700 px-2 text-sm font-bold text-slate-100 dark:bg-neutral-300 dark:text-neutral-900">
       {tech}
     </span>
   );

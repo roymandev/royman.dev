@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
@@ -85,11 +86,16 @@ export default function Document() {
           crossOrigin=""
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap"
           rel="stylesheet"
         />
       </Head>
-      <body className="bg-zinc-900 text-cyan-100/90 antialiased">
+      <body
+        className={clsx(
+          'bg-slate-300 text-slate-800 antialiased',
+          'dark:bg-neutral-900 dark:text-neutral-300',
+        )}
+      >
         <Main />
         <NextScript />
       </body>

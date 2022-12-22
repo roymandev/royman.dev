@@ -33,7 +33,9 @@ const Home: NextPage<HomePageProps> = ({ applications }) => {
             <h1 className="text-5xl font-bold uppercase tracking-[.2em]">
               Royman
             </h1>
-            <p className="text-lg text-teal-100/50">Frontend Developer</p>
+            <p className="text-lg text-slate-600 dark:text-neutral-500">
+              Frontend Developer
+            </p>
           </header>
 
           <p className="mx-auto mt-6 max-w-sm text-xl">
