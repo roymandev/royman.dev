@@ -1,5 +1,6 @@
 import CustomButton from '@/components/CustomButton';
 import NavItem from '@/components/NavItem';
+import SocialLinks from '@/components/SocialLinks';
 import ThemeButton from '@/components/ThemeButton';
 import twclsx from '@/lib/twclsx';
 import { useState } from 'react';
@@ -20,6 +21,15 @@ const Header = ({ className }: HeaderProps) => {
         navOpen && 'fixed sm:relative',
       )}
     >
+      <div
+        className={twclsx(
+          'mt-auto flex justify-center gap-3 sm:hidden',
+          !navOpen && 'hidden',
+        )}
+      >
+        <SocialLinks />
+      </div>
+
       <nav
         className={twclsx(
           'flex flex-col gap-2 sm:-ml-5 sm:mr-auto sm:flex-row sm:gap-1',
