@@ -5,13 +5,18 @@ import twclsx from '@/lib/twclsx';
 import { useState } from 'react';
 import { HiBars2, HiXMark } from 'react-icons/hi2';
 
-const Header = () => {
+export type HeaderProps = {
+  className?: string;
+};
+
+const Header = ({ className }: HeaderProps) => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
     <header
       className={twclsx(
         'container inset-0 z-10 mx-auto flex max-w-4xl flex-col-reverse justify-end gap-8 bg-slate-300 py-8 px-6 dark:bg-neutral-900 sm:flex-row',
+        className,
         navOpen && 'fixed sm:relative',
       )}
     >
