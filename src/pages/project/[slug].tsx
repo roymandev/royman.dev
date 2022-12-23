@@ -14,6 +14,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks';
 import Image from 'next/image';
 import { HiArrowTopRightOnSquare } from 'react-icons/hi2';
 import { RiGithubFill } from 'react-icons/ri';
+import twclsx from '@/lib/twclsx';
 
 export interface ProjectDetailPageProps {
   project: Project;
@@ -114,7 +115,11 @@ const ProjectDetailPage: NextPage<
             />
           )}
 
-          <section className="px-6 sm:px-0">
+          <section
+            className={twclsx(
+              'prose prose-theme mt-10 px-6 dark:prose-invert sm:px-0 md:prose-lg',
+            )}
+          >
             <MDXContent />
           </section>
         </article>
