@@ -24,7 +24,12 @@ const Footer = ({ className }: FooterProps) => {
     >
       <SocialLinks />
 
-      <CustomButton icon className="ml-auto" onClick={scrollToTopHandler}>
+      <CustomButton
+        title="Back to top"
+        icon
+        className="ml-auto"
+        onClick={scrollToTopHandler}
+      >
         <HiArrowUp className="h-5 w-5" />
       </CustomButton>
     </footer>

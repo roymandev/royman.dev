@@ -43,6 +43,7 @@ const Header = ({ className }: HeaderProps) => {
 
       <div className="flex items-center sm:ml-auto">
         <CustomButton
+          title="Toggle nav"
           icon
           type="secondary"
           onClick={() => setNavOpen(!navOpen)}

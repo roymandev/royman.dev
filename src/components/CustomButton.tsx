@@ -9,6 +9,7 @@ export interface CustomButtonProps {
   type?: 'primary' | 'secondary';
   icon?: boolean;
   disabled?: boolean;
+  title?: string;
 }
 
 const CustomButton = ({
@@ -19,6 +20,7 @@ const CustomButton = ({
   type = 'primary',
   icon = false,
   disabled = false,
+  title,
 }: CustomButtonProps) => {
   const BASE_CLASS = twclsx(
     'flex h-11 items-center rounded-lg hover:bg-slate-400/60',
@@ -31,13 +33,18 @@ const CustomButton = ({
 
   if (href)
     return (
-      <BaseLink className={twclsx(BASE_CLASS, className)} href={href}>
+      <BaseLink
+        title={title}
+        className={twclsx(BASE_CLASS, className)}
+        href={href}
+      >
         {children}
       </BaseLink>
     );
 
   return (
     <button
+      title={title}
       className={twclsx(BASE_CLASS, className)}
       onClick={onClick}
       disabled={disabled}

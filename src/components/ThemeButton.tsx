@@ -34,6 +34,7 @@ const ThemeButton = ({ className }: ThemeButtonProps) => {
 
   return (
     <CustomButton
+      title="Toggle theme"
       icon
       className={twclsx(
         'group z-20 transition-[border-radius] hover:rounded-2xl',

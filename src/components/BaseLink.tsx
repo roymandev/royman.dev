@@ -4,19 +4,28 @@ export interface BaseLinkProps extends LinkProps {
   href: string;
   className?: string;
   children: React.ReactNode;
+  title?: string;
 }
 
-const BaseLink = ({ href, children, ...props }: BaseLinkProps) => {
+const BaseLink = ({ href, children, title, ...props }: BaseLinkProps) => {
   if (href.startsWith('http'))
     return (
-      <a href={href} rel="noopener noreferrer" target="_blank" {...props}>
+      <a
+        title={title}
+        href={href}
+        rel="noopener noreferrer"
+        target="_blank"
+        {...props}
+      >
         {children}
       </a>
     );
 
   return (
     <Link href={href} {...props}>
-      <a className={props.className}>{children}</a>
+      <a title={title} className={props.className}>
+        {children}
+      </a>
     </Link>
   );
 };
