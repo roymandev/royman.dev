@@ -33,6 +33,7 @@ export const Project = defineDocumentType(() => ({
           'vite',
           'jotai',
           'nextjs',
+          'supabase',
         ],
         description: 'The tech used in the project',
       },
