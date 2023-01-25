@@ -12,33 +12,34 @@ import { HiMagnifyingGlass } from 'react-icons/hi2';
 
 export interface ProjectListPageProps {
   apps: Project[];
+  techList: Project['techs'];
 }
 
 export const getStaticProps: GetStaticProps<
   ProjectListPageProps
 > = async () => {
-  return { props: { apps: allProjects } };
+  const apps = allProjects;
+  const techList = apps
+    .reduce<Project['techs']>((acc, app) => acc.concat(app.techs), [])
+    .filter((value, index, self) => self.indexOf(value) === index);
+
+  return {
+    props: {
+      apps,
+      techList,
+    },
+  };
 };
 
 const ProjectListPage: NextPage<
   InferGetStaticPropsType<typeof getStaticProps>
-> = ({ apps }) => {
-  const [techList, setTechList] = useState<Project['techs']>([]);
+> = ({ apps, techList }) => {
   const [query, setQuery] = useState('');
   const defferedQuery = useDeferredValue(query);
   const [filteredApps, setFilteredApps] = useState(apps);
-  const [filteredAppsTech, setFilteredAppsTech] = useState<Project['techs']>(
-    [],
-  );
+  const [filteredAppsTech, setFilteredAppsTech] =
+    useState<Project['techs']>(techList);
   const [techsFilter, setTechsFilter] = useState<Project['techs']>([]);
-
-  useEffect(() => {
-    const techs = apps
-      .reduce<Project['techs']>((acc, app) => acc.concat(app.techs), [])
-      .filter((value, index, self) => self.indexOf(value) === index);
-
-    setTechList(techs);
-  }, [apps]);
 
   useEffect(() => {
     // Filter app by title and tech
