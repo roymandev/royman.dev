@@ -6,7 +6,7 @@ export interface ResumeSectionProps {
 
 const BaseSection = ({ title, children, className }: ResumeSectionProps) => (
   <section className={className}>
-    <h2 className="mb-3 text-xl uppercase tracking-[.25rem] print:text-lg">
+    <h2 className="mb-3 text-xl font-bold uppercase tracking-[.25rem] print:text-lg">
       {title}
     </h2>
     {children}
