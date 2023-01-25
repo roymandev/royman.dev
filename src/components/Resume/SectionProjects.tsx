@@ -4,10 +4,10 @@ import BaseSection from '@/components/Resume/BaseSection';
 const SectionProjects = () => (
   <BaseSection title="Personal Projects" className="sm:col-span-2">
     <article className="mb-6 space-y-2">
+      <h2 className="py-1 text-xl font-bold">Worship App</h2>
       <header className="flex items-center gap-4">
-        <h2 className="py-1 text-lg font-bold">Worship App</h2>-
         <CustomLink href="https://worship-app.royman.dev/">Live App</CustomLink>
-        -
+        |
         <CustomLink href="https://github.com/roymandev/worship-app">
           Repository
         </CustomLink>
@@ -16,7 +16,7 @@ const SectionProjects = () => (
         A web-based application designed to enhance the worship experience for
         church by providing an easy way to display lyrics during services.
       </p>
-      <p>
+      <div>
         Key features:
         <ul className="ml-8 list-disc">
           <li>
@@ -30,14 +30,14 @@ const SectionProjects = () => (
             database.
           </li>
         </ul>
-      </p>
+      </div>
       <p>Tech stack: React.js with TypeScript, Tailwind CSS, and Supabase.</p>
     </article>
 
     <article className="space-y-2">
-      <header className="flex items-center gap-4">
-        <h2 className="py-1 text-lg font-bold">My Notes</h2>-
-        <CustomLink href="https://my-notes.royman.dev/">Live App</CustomLink>-
+      <h2 className="py-1 text-xl font-bold">My Notes</h2>
+      <header className="flex items-center gap-x-4">
+        <CustomLink href="https://my-notes.royman.dev/">Live App</CustomLink>|
         <CustomLink href="https://github.com/roymandev/my-notes">
           Repository
         </CustomLink>
@@ -47,7 +47,7 @@ const SectionProjects = () => (
         and enables users to easily create and organize notes from multiple
         devices.
       </p>
-      <p>
+      <div>
         Tech used:
         <ul className="ml-8 list-disc">
           <li>React.js with Typescript</li>
@@ -55,7 +55,7 @@ const SectionProjects = () => (
           <li>Jotai for state management</li>
           <li>Firebase for database and authentication</li>
         </ul>
-      </p>
+      </div>
     </article>
   </BaseSection>
 );
