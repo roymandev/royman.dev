@@ -16,7 +16,9 @@ const NavItem = ({ href, children }: NavItemProps) => {
       type="secondary"
       href={href}
       className={twclsx(
-        isActive ? 'font-bold' : 'text-slate-600 dark:text-neutral-500',
+        isActive
+          ? 'font-bold text-slate-800 dark:text-neutral-100'
+          : 'text-slate-700 dark:text-neutral-400',
       )}
     >
       {children}

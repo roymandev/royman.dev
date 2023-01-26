@@ -27,7 +27,7 @@ const CustomButton = ({
     'outline-none ring-2 ring-transparent focus-visible:outline-none focus-visible:ring-indigo-500/90',
     icon ? 'w-11 justify-center' : 'px-5',
     type === 'primary' &&
-      'bg-slate-400/30 dark:bg-neutral-700/30 dark:hover:bg-neutral-700/60',
+      'bg-slate-400/20 dark:bg-neutral-700/20 dark:hover:bg-neutral-700/60',
     type === 'secondary' && 'dark:hover:bg-neutral-700/60',
   );
 

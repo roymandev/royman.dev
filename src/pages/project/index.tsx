@@ -73,7 +73,7 @@ const ProjectListPage: NextPage<
       <main className="container mx-auto max-w-4xl py-8 px-6">
         <section className="mx-auto mb-10">
           <h1 className="mb-4 text-5xl font-bold">Projects</h1>
-          <p className="text-slate-600 dark:text-neutral-500">
+          <p className="text-slate-700 dark:text-neutral-400">
             Showcase of my project that I&apos;ve created using with my
             knowledge in Frontend Development.
           </p>
@@ -90,8 +90,8 @@ const ProjectListPage: NextPage<
             />
             <HiMagnifyingGlass
               className={clsx(
-                'absolute top-3 right-3 h-5 w-5 text-slate-600',
-                'dark:text-neutral-500',
+                'absolute top-3 right-3 h-5 w-5 text-slate-700',
+                'dark:text-neutral-400',
               )}
             />
           </div>

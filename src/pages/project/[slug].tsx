@@ -85,7 +85,12 @@ const ProjectDetailPage: NextPage<
                 )}
 
                 {project.repoUrl && (
-                  <CustomButton href={project.repoUrl} type="secondary" icon>
+                  <CustomButton
+                    title="Open repository"
+                    href={project.repoUrl}
+                    type="secondary"
+                    icon
+                  >
                     <RiGithubFill className="h-6 w-6" />
                   </CustomButton>
                 )}

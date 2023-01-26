@@ -25,7 +25,12 @@ const Resume: NextPage = () => {
       <Header className="print:hidden" />
 
       <div className="mt-10 mb-14 flex items-center justify-center gap-3 rounded-lg px-6 print:hidden">
-        <CustomButton icon className="shrink-0" onClick={printHandler}>
+        <CustomButton
+          title="Print resume"
+          icon
+          className="shrink-0"
+          onClick={printHandler}
+        >
           <HiOutlinePrinter className="h-5 w-5" />
         </CustomButton>
         <p>You can print this page to get the PDF version.</p>
@@ -42,7 +47,7 @@ const Resume: NextPage = () => {
             <p className="text-xl">Frontend Web Developer</p>
           </div>
           <article className="mt-10 text-center sm:mt-0 sm:ml-auto sm:text-right">
-            <h3 className="font-bold uppercase tracking-[.25rem]">Medan</h3>
+            <span className="font-bold uppercase tracking-[.25rem]">Medan</span>
             <p>Sumatera Utara, Indonesia</p>
           </article>
         </header>
