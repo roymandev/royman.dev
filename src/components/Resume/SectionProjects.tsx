@@ -2,7 +2,10 @@ import CustomLink from '@/components/CustomLink';
 import BaseSection from '@/components/Resume/BaseSection';
 
 const SectionProjects = () => (
-  <BaseSection title="Personal Projects" className="sm:col-span-2">
+  <BaseSection
+    title="Personal Projects"
+    className="print:col-span-2 sm:col-span-2"
+  >
     <article className="mb-6 space-y-2">
       <h2 className="py-1 text-xl font-bold">Worship App</h2>
       <header className="flex items-center gap-4">
