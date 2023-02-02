@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Lexend Deca', ...defaultTheme.fontFamily.sans],
+        sans: ['Kumbh Sans', ...defaultTheme.fontFamily.sans],
       },
       typography: ({ theme }) => ({
         theme: {
