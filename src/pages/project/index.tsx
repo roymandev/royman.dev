@@ -4,11 +4,14 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import PillsCheckbox from '@/components/PillsCheckbox';
 import CustomSeo from '@/components/utils/CustomSeo';
+import useFilterProjects from '@/hooks/useFilterProjects';
 import clsx from 'clsx';
 import { allProjects, Project } from 'contentlayer/generated';
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
-import { useDeferredValue, useEffect, useState } from 'react';
 import { HiMagnifyingGlass } from 'react-icons/hi2';
+
+const getUniqueProjectTechs = (projects: Project[]) =>
+  Array.from(new Set(projects.flatMap((project) => project.techs)));
 
 export interface ProjectListPageProps {
   apps: Project[];
@@ -19,46 +22,20 @@ export const getStaticProps: GetStaticProps<
   ProjectListPageProps
 > = async () => {
   const apps = allProjects;
-  const techList = apps
-    .reduce<Project['techs']>((acc, app) => acc.concat(app.techs), [])
-    .filter((value, index, self) => self.indexOf(value) === index);
-
-  return {
-    props: {
-      apps,
-      techList,
-    },
-  };
+  const techList = getUniqueProjectTechs(apps);
+  return { props: { apps, techList } };
 };
 
 const ProjectListPage: NextPage<
   InferGetStaticPropsType<typeof getStaticProps>
 > = ({ apps, techList }) => {
-  const [query, setQuery] = useState('');
-  const defferedQuery = useDeferredValue(query);
-  const [filteredApps, setFilteredApps] = useState(apps);
-  const [filteredAppsTech, setFilteredAppsTech] =
-    useState<Project['techs']>(techList);
-  const [techsFilter, setTechsFilter] = useState<Project['techs']>([]);
-
-  useEffect(() => {
-    // Filter app by title and tech
-    const filteredApps = apps.filter(
-      (app) =>
-        app.title.toLowerCase().includes(defferedQuery.toLowerCase()) &&
-        techsFilter.every((tech) => app.techs.includes(tech)),
-    );
-
-    setFilteredApps(filteredApps);
-  }, [apps, techsFilter, defferedQuery]);
-
-  useEffect(() => {
-    const filteredAppsTech = filteredApps
-      .reduce<Project['techs']>((acc, app) => acc.concat(app.techs), [])
-      .filter((value, index, self) => self.indexOf(value) === index);
-
-    setFilteredAppsTech(filteredAppsTech);
-  }, [filteredApps]);
+  const {
+    filteredApps,
+    titleFilter,
+    setTitleFilter,
+    techsFilter,
+    setTechsFilter,
+  } = useFilterProjects(apps);
 
   return (
     <>
@@ -85,8 +62,8 @@ const ProjectListPage: NextPage<
               type="text"
               className="w-full pr-11"
               placeholder="Search projects"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              value={titleFilter}
+              onChange={(e) => setTitleFilter(e.target.value)}
             />
             <HiMagnifyingGlass
               className={clsx(
@@ -98,7 +75,10 @@ const ProjectListPage: NextPage<
 
           <PillsCheckbox
             items={techList}
-            activeItems={filteredAppsTech}
+            activeItems={[
+              ...getUniqueProjectTechs(filteredApps),
+              ...techsFilter,
+            ]}
             selectedItems={techsFilter}
             onChange={setTechsFilter}
             className="mt-2"
