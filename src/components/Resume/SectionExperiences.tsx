@@ -6,7 +6,7 @@ const SectionExperiences = () => (
       <h2 className="text-xl font-bold leading-8">
         Freelance React.js Developer
       </h2>
-      <p>PT.Sinergi Rajawali Mataram, February 2023 - Present</p>
+      <p>PT Sinergi Rajawali Mataram, February 2023 - Present</p>
 
       <ul className="ml-8 list-disc">
         <li>
