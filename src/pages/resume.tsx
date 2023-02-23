@@ -79,7 +79,7 @@ const Resume: NextPage = () => {
 
         <main
           className={twMerge(
-            'mt-12 grid grid-cols-1 gap-12',
+            'mt-12 grid grid-cols-1 gap-y-12 gap-x-8',
             'sm:grid-cols-2',
             'print:grid-cols-2',
           )}
@@ -88,9 +88,9 @@ const Resume: NextPage = () => {
           <SectionSummary />
           <SectionSkills />
           <SectionCertificates />
+          <SectionExperiences />
           <SectionProjects />
           <SectionEducations />
-          <SectionExperiences />
         </main>
       </div>
 

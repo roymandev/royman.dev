@@ -7,15 +7,6 @@ export const royman = {
   },
   summary:
     "I'm a person who loves to learn and create things.\nThat why currently now i learn programming and make great apps.",
-  experiences: [
-    {
-      position: 'Printing Supervisor',
-      company: 'PT Reycom Document Solusi',
-      city: 'Medan',
-      start_date: 'Aug 2021',
-      end_date: 'Present',
-    },
-  ],
   educations: [
     {
       school: 'SMK Swasta Markus 2',
