@@ -4,7 +4,7 @@ const SectionExperiences = () => (
   <BaseSection title="Experiences" className="print:col-span-2 sm:col-span-2">
     <article className="mb-6 space-y-2 py-1">
       <h2 className="text-xl font-bold leading-8">
-        Freelance React.js Developer
+        Frontend Developer
       </h2>
       <p>PT Sinergi Rajawali Mataram, February 2023 - Present</p>
 
