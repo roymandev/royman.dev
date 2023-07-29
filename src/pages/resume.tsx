@@ -87,10 +87,10 @@ const Resume: NextPage = () => {
           <SectionContacts />
           <SectionSummary />
           <SectionSkills />
-          <SectionCertificates />
+          <SectionEducations />
           <SectionExperiences />
           <SectionProjects />
-          <SectionEducations />
+          <SectionCertificates />
         </main>
       </div>
 
