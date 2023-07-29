@@ -15,6 +15,7 @@ import Image from 'next/image';
 import { HiArrowTopRightOnSquare } from 'react-icons/hi2';
 import { RiGithubFill } from 'react-icons/ri';
 import twclsx from '@/lib/twclsx';
+import clsx from 'clsx';
 
 export interface ProjectDetailPageProps {
   project: Project;
@@ -88,10 +89,13 @@ const ProjectDetailPage: NextPage<
                   <CustomButton
                     title="Open repository"
                     href={project.repoUrl}
-                    type="secondary"
-                    icon
+                    type={project.liveUrl ? 'secondary' : 'primary'}
+                    icon={!!project.liveUrl}
                   >
-                    <RiGithubFill className="h-6 w-6" />
+                    <RiGithubFill
+                      className={clsx('h-6 w-6', !project.liveUrl && 'mr-3')}
+                    />
+                    {!project.liveUrl && 'Repository'}
                   </CustomButton>
                 )}
               </div>
